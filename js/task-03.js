@@ -15,9 +15,11 @@ const images = [
 
 const gallery = document.querySelector(".gallery");
 
-gallery.innerHTML = images
+const markup = images
   .map(
     ({ url, alt }) =>
       `<li><img style="width:100vw" src="${url}" alt="${alt}" ></li>`
   )
   .join("");
+
+  gallery.insertAdjacentHTML("beforeend", markup);
